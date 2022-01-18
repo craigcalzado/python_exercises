@@ -1,0 +1,1 @@
+All python exercises will be in this repository.
