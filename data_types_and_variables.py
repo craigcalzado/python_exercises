@@ -1,6 +1,8 @@
 
+from atexit import register
 from concurrent.futures.process import _ThreadWakeup
 from re import T
+from sre_constants import SUCCESS
 
 # 1.
 the_little_mermaid = 3 #days
@@ -14,6 +16,7 @@ total_cost = total_days_rented * cost_per_movie
 print(total_cost)
 
 
+# 2.
 google = 400
 amazon = 380
 facebook = 350
@@ -32,6 +35,9 @@ class_open and schedule_not_conflicts
 class_open and schedule_conflicts
 class_closed or schedule_conflicts
 
+reg_for_classes = class_open and schedule_not_conflicts
+print(reg_for_classes)
+
 # 3.
 items_in_cart = 4
 
@@ -43,10 +49,10 @@ premium_member = True
 not_premium_member = False
 
 items_in_cart >= min_items and offer_not_expired
-items_in_cart >= min_items or premium_member and offer_expired
+discount_applied = items_in_cart >= min_items or premium_member and offer_not_expired
+print(discount_applied)
 
 # 4.
-
 username = 'codeup'
 password = 'notastrongpassword'
 
@@ -67,3 +73,7 @@ pass_space = password[0] == ' ' or password[-1] == ' '
 
 success = pass_char and user_char and not same_info and not (user_space or pass_space)
 
+print(success)
+
+# BONUS
+ 
