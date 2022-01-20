@@ -13,10 +13,13 @@
 # Function Vocabulary
 #
 # - run / invoke / call
-# - argument
-# - return value
+# - argument- values passed through function
+# - return value- the result 
 
 # We've already used some built-in functions
+
+import re
+
 
 type('abc')
 print('Hey there!')
@@ -24,26 +27,26 @@ print('Hey there!')
 # TODO: take a look at the code snippet below:
 max([1, 2, 3])
 
-# What is the function name?
-# Where is the function invocation?
-# What is the return value?
+# What is the function name? max
+# Where is the function invocation? parenthises
+# What is the return value? 3
 
 # TODO: What will the output of the following code be? Why? Explain step-by-step
-type(max([1, 2, 3]))
+type(max([1, 2, 3])) # output would be int because it is asking for the type that max would return
 
 # TODO: What will the output of the following code be? Why?
-type(max)
+type(max)# output would be built in function because of the type function
 
 # What other built-in functions do you know?
-
+# lower(), pow(), min(), len()
 ############################## Defining Functions ##############################
 
 # Function Vocabulary
 #
-# - Function Definition
-# - Function Name
-# - Parameter
-# - Function Body
+# - Function Definition- the entire function
+# - Function Name- comes after the def
+# - Parameter- the place holder that takes on the value
+# - Function Body- indented lines
 
 def increment(n):
     return n + 1
@@ -53,20 +56,56 @@ def increment(n):
     print(n + 1)
 
 # TODO: define a function named is_weekend. This function should accept a string and return true if the string is either saturday or sunday, false otherwise.
+def is_weekend(n):
+    if n.lower() in ['saturday', 'sunday']:
+        return True
+    else:
+        return False
+
 # TODO: test out your is_weekend function with various values.
+is_weekend('monday')
+is_weekend('friday')
+is_weekend('sunday')
 # TODO: Use your is_weekend function in combination with input() and an if statement to prompt the user for a day of the week and tell them whether or not it is a weekend.
-
+user_input = input('Pick a day of the week.')
+is_weekend(user_input)
 # TODO: Create a function named nonzero. It should accept a number and return true if the number is anythong other than zero, false otherwise.
-# TODO: Use your nonzero function in combination with the built-in input function and an if statement to prompt the user for a number and print a message displaying whether or not the number is zero.
-# TODO: Transfer the work you have done into a function named explain_nonzero. Calling this function should prompt the user and display the message as before.
+def nonzero(n):
+    return n != 0
 
+# TODO: Use your nonzero function in combination with the built-in input function and an if statement to prompt the user for a number and print a message displaying whether or not the number is zero.
+user_input = int(input('Enter a number:'))
+if nonzero(user_input):
+    print('its not a zero')
+else:
+    print('this is a ZERO')
+# TODO: Transfer the work you have done into a function named explain_nonzero. Calling this function should prompt the user and display the message as before.
+def explain_nonzero():
+    user_input = int(input('Enter a number:'))
+    if nonzero(user_input):
+        print('its not a zero')
+    else:
+        print('this is a ZERO')
+
+explain_nonzero()
 ## Default Parameter Values and Keyword Arguments ##
 
-# - Positional Argument
-# - Keyword Argument
+# - Positional Argument- add(3, 4)
+# - Keyword Argument- add(x=3, y=4)
+
+def add(x, y):
+    return x + y
+
+add(3, 4) # all positional arguments
+add(x=3, y=4) # all key work arguments
+
 
 def sayhello(name="Innis"):
     return f"Hello, {name}!"
+
+sayhello()
+sayhello('Craig')
+sayhello(name='Craig')
 
 # TODO: call the say hello function and don't pass any arguments
 # TODO: call the say hello function and pass your name as a string argument both positionally and as a keyword argument.
