@@ -11,6 +11,7 @@
 
 
 from calendar import FRIDAY, MONDAY, THURSDAY, TUESDAY, WEDNESDAY
+from turtle import title
 
 
 day_of_the_week = input('What day of the week is it?\n')
@@ -116,8 +117,6 @@ for n in range(0, int(num) + 1):
 
 # e.
 num = input('Enter a positive number:')
-while not num.isdigit():
-    num = input('Try Again!')
 n = int(num)
 while n >= 1:
     print(n)
@@ -154,3 +153,45 @@ while ans == 'y':
          print('{0:7}'.format(f'{n}') + '| ' + 
          '{0:9}'.format(f'{n**2}') + '| ' + f'{n**3}')
     ans = input('Want try another number y/n')
+
+# 5. 
+
+user_grade = int(input('What is your grade? Whole numbers Only!'))
+if user_grade < 60:
+    print(f'{user_grade} = F')
+elif user_grade < 65:
+    print(f'{user_grade} = D-')
+elif user_grade < 67:
+    print(f'{user_grade} = D+')
+elif user_grade < 73:
+    print(f'{user_grade} = C-')
+elif user_grade < 80:
+    print(f'{user_grade} = C+')
+elif user_grade < 83:
+    print(f'{user_grade} = B-')
+elif user_grade < 88:
+    print(f'{user_grade} = B+')
+elif user_grade < 193:
+    print(f'{user_grade} = A-')
+elif user_grade < 101:
+    print(f'{user_grade} = A+')
+else:
+    print(f'{user_grade} is unkown!')
+
+# 6.
+dict = [{'title': 'book1', 'author': 'name1', 'genre': 'horror'},
+        {'title': 'book2', 'author': 'name2', 'genre': 'science'},
+        {'title': 'book3', 'author': 'name3', 'genre': 'coding'}]
+
+for cat in dict:
+    print('title:' + cat['title'])
+    print('author:' + cat['author'])
+    print('genre:' + cat['genre'])
+
+# a.
+user_genre = input('Choose a genre:\n')
+for cat in dict:
+    if user_genre == cat['genre']:
+        print('title:' + cat['title'])
+        print('author:' + cat['author'])
+        print('genre:' + cat['genre'])
