@@ -190,6 +190,9 @@ for cat in dict:
 
 # a.
 user_genre = input('Choose a genre:\n')
+while user_genre.isdigit():
+    user_genre = input('Try again, genre???')
+print('List of books avalible')
 for cat in dict:
     if user_genre == cat['genre']:
         print('title:' + cat['title'])
