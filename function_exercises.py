@@ -1,11 +1,12 @@
 #1. 
 # is_two defines the input which is an int and will return True or False depending it its a 2. 
-def is_two(int(n)):
+def is_two(n):
     if n == 2 :
         return True
     else:
         return False
 
+is_two(int(input('Enter number two:')))
 # better way to ans
 #def is_two(n)
 #    return n == 2 or n == '2'
