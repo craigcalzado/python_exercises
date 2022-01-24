@@ -1,9 +1,14 @@
 #1. 
+# is_two defines the input which is an int and will return True or False depending it its a 2. 
 def is_two(int(n)):
     if n == 2 :
         return True
     else:
         return False
+
+# better way to ans
+#def is_two(n)
+#    return n == 2 or n == '2'
 
 is_two(input('Pick a number between 1 and 3'))
 
@@ -13,6 +18,7 @@ def is_vowel(vowel):
         return True
     else:
         return False
+
 
 is_vowel(input('Enter a single letter:'))
 
@@ -40,7 +46,7 @@ def calculated_tip(tip_percent, bill):
     amount_to_tip = tip_percent * bill
     return amount_to_tip
 
-calculated_tip(.25, 40)
+calculated_tip(float(input('Enter tip percent:')), int(input('Enter bill amount:')))
 
 #6.
 def apply_discount(price, discount):
@@ -48,7 +54,7 @@ def apply_discount(price, discount):
     price_post_discount = price - amount_discounted
     return price_post_discount
 
-apply_discount(50, .4)
+apply_discount(int(input('Enter price:')), float(input('Enter discount:')))
 
 #7.
 def handle_commas(x):
