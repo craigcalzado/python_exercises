@@ -32,6 +32,8 @@ import json
 profiles = json.load(open('profiles.json'))
 profiles
 
+
+
 num_of_users = len(profiles)
 print('Total number of users:', num_of_users)
 
@@ -76,3 +78,22 @@ for users in profiles:
     balances.append(clean_data)
 print(max(balances))
 
+#h. 
+fruits = {}
+for users in profiles:
+    if users['favoriteFruit'] in fruits.keys():
+        fruits[users['favoriteFruit']] += 1
+    else:
+        fruits[users['favoriteFruit']] = 1
+print(fruits)
+print('The most common fruit is', max(fruits))
+
+#i.
+print('The most uncommon fruit is', min(fruits))
+
+#j. 
+unread_emails = 0 
+for users in profiles:
+    for greet in profiles['greeting']:
+        if greet.isdigit():
+            unread_emails += int(greet)
